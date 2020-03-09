@@ -2,23 +2,23 @@ package com.br.api.agenda.entities;
 
 public class Agenda {
 
-	private String nome;
-	private String dataDeNascimento;
+	private String name;
+	private String dateOfBirth;
 	private String cpf;
 	
-	public Agenda(String nome, String dataDeNascimento, String cpf) {
+	public Agenda(String name, String dateOfBirth, String cpf) {
 		
-		this.nome = nome;
-		this.dataDeNascimento = dataDeNascimento;
+		this.name = name;
+		this.dateOfBirth = dateOfBirth;
 		this.cpf = cpf;
 	}
 	
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public String getDataDeNascimento() {
-		return dataDeNascimento;
+	public String getDateOfBirth() {
+		return dateOfBirth;
 	}
 
 	public String getCpf() {
@@ -27,6 +27,6 @@ public class Agenda {
 
 	@Override
 	public String toString() {
-		return "Agenda [nome=" + nome + ", dataDeNascimento=" + dataDeNascimento + ", cpf=" + cpf + "]";
+		return "Agenda [name=" + name + ", dataDeNascimento=" + dateOfBirth + ", cpf=" + cpf + "]";
 	}
 }
