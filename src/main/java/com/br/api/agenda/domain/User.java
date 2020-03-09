@@ -1,14 +1,26 @@
 package com.br.api.agenda.domain;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.br.api.agenda.entities.Agenda;
+import com.br.api.agenda.entities.Endereco;
+import com.br.api.agenda.entities.Telefone;
 
 @Document(collection="user")
 public class User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
+	
+	private Set<Agenda> dados_agenda = new HashSet<>();
+	
+	private Set<Endereco> enderecos = new HashSet<>();
+	
+	private Set<Telefone> telefones = new HashSet<>();
 	
 	@Id
 	private String id;
@@ -48,6 +60,30 @@ public class User implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Set<Agenda> getDados_agenda() {
+		return dados_agenda;
+	}
+
+	public void setDados_agenda(Set<Agenda> dados_agenda) {
+		this.dados_agenda = dados_agenda;
+	}
+
+	public Set<Endereco> getEnderecos() {
+		return enderecos;
+	}
+
+	public void setEnderecos(Set<Endereco> enderecos) {
+		this.enderecos = enderecos;
+	}
+
+	public Set<Telefone> getTelefones() {
+		return telefones;
+	}
+
+	public void setTelefones(Set<Telefone> telefones) {
+		this.telefones = telefones;
 	}
 
 	@Override

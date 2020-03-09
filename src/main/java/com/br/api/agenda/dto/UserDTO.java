@@ -1,6 +1,7 @@
 package com.br.api.agenda.dto;
 
 import java.io.Serializable;
+import java.util.Optional;
 
 import com.br.api.agenda.domain.User;
 
@@ -12,7 +13,7 @@ public class UserDTO implements Serializable{
 	private String name;
 	private String email;
 	
-	public UserDTO() {
+	public UserDTO(Optional<User> obj) {
 		
 	}
 	
