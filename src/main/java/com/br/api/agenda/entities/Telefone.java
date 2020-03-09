@@ -9,13 +9,9 @@ public class Telefone {
     private Tipo tipoTelefone;
     private String ramal;
     
-	public Telefone(int ddd, int ddi, String numero, Tipo tipoTelefone) {
-		super();
-		this.ddd = ddd;
-		this.ddi = ddi;
-		this.numero = numero;
-		this.tipoTelefone = tipoTelefone;
-	}
+    public Telefone() {
+    	
+    }
 
 	public Telefone(int ddd, int ddi, String numero, Tipo tipoTelefone, String ramal) {
 		
@@ -26,16 +22,16 @@ public class Telefone {
 		this.ramal = ramal;
 	}
 	
-	public Telefone criaCelular(int ddd, int ddi, String numero){
-        return new Telefone(ddd, ddi, numero, Tipo.Celular);
+	public Telefone criaCelular(int ddd, int ddi, String numero, String ramal){
+        return new Telefone(ddd, ddi, numero, Tipo.Celular, ramal);
     }
 
-    public Telefone criaResidencial(int ddd, int ddi, String numero){
-        return new Telefone(ddd, ddi, numero, Tipo.Residencial);
+    public Telefone criaResidencial(int ddd, int ddi, String numero, String ramal){
+        return new Telefone(ddd, ddi, numero, Tipo.Residencial, ramal);
     }
 
-    public static Telefone criaTrabalho(int ddd, int ddi, String numero){
-        return new Telefone(ddd, ddi, numero, Tipo.Trabalho);
+    public static Telefone criaTrabalho(int ddd, int ddi, String numero, String ramal){
+        return new Telefone(ddd, ddi, numero, Tipo.Trabalho, ramal);
     }
 
     public String formatoSimplesDDD(){

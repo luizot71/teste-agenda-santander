@@ -1,14 +1,12 @@
 package com.br.api.agenda.entities;
 
-import java.util.Calendar;
-
 public class Agenda {
 
 	private String nome;
-	private Calendar dataDeNascimento;
+	private String dataDeNascimento;
 	private String cpf;
 	
-	public Agenda(String nome, Calendar dataDeNascimento, String cpf) {
+	public Agenda(String nome, String dataDeNascimento, String cpf) {
 		
 		this.nome = nome;
 		this.dataDeNascimento = dataDeNascimento;
@@ -19,7 +17,7 @@ public class Agenda {
 		return nome;
 	}
 
-	public Calendar getDataDeNascimento() {
+	public String getDataDeNascimento() {
 		return dataDeNascimento;
 	}
 
