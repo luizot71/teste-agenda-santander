@@ -8,20 +8,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.br.api.agenda.domain.User;
-import com.br.api.agenda.services.UserService;
+import com.br.api.agenda.entities.Agenda;
+import com.br.api.agenda.services.AgendaService;
 
 @RestController
-@RequestMapping(value="/users")
-public class UserResource {
+@RequestMapping(value="/dados_agenda")
+public class AgendaResource {
 	
 	@Autowired
-	private UserService service;
+	private AgendaService service;
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public ResponseEntity<List<User>> findAll(){
+	public ResponseEntity<List<Agenda>> findAll(){
 		
-		List<User> list = service.findAll();
+		List<Agenda> list = service.findAll();
 		
 		return ResponseEntity.ok().body(list);
 	}

@@ -8,20 +8,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.br.api.agenda.domain.User;
-import com.br.api.agenda.services.UserService;
+import com.br.api.agenda.entities.Endereco;
+import com.br.api.agenda.services.EnderecoService;
 
 @RestController
-@RequestMapping(value="/users")
-public class UserResource {
+@RequestMapping(value="/enderecos")
+public class EnderecoResource {
 	
 	@Autowired
-	private UserService service;
+	private EnderecoService service;
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public ResponseEntity<List<User>> findAll(){
+	public ResponseEntity<List<Endereco>> findAll(){
 		
-		List<User> list = service.findAll();
+		List<Endereco> list = service.findAll();
 		
 		return ResponseEntity.ok().body(list);
 	}

@@ -8,20 +8,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.br.api.agenda.domain.User;
-import com.br.api.agenda.services.UserService;
+import com.br.api.agenda.entities.Telefone;
+import com.br.api.agenda.services.TelefoneService;
 
 @RestController
-@RequestMapping(value="/users")
-public class UserResource {
+@RequestMapping(value="/telefones")
+public class TelefoneResource {
 	
 	@Autowired
-	private UserService service;
+	private TelefoneService service;
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public ResponseEntity<List<User>> findAll(){
+	public ResponseEntity<List<Telefone>> findAll(){
 		
-		List<User> list = service.findAll();
+		List<Telefone> list = service.findAll();
 		
 		return ResponseEntity.ok().body(list);
 	}
