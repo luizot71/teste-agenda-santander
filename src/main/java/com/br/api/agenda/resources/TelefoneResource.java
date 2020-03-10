@@ -13,7 +13,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.br.api.agenda.domain.Post;
+import com.br.api.agenda.dto.EnderecoDTO;
 import com.br.api.agenda.dto.TelefoneDTO;
+import com.br.api.agenda.entities.Endereco;
 import com.br.api.agenda.entities.Telefone;
 import com.br.api.agenda.services.TelefoneService;
 
@@ -52,6 +55,20 @@ public class TelefoneResource {
  	public ResponseEntity<Void> delete(@PathVariable String id) {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
+	}
+	
+	@RequestMapping(value="/{id}", method=RequestMethod.PUT)
+ 	public ResponseEntity<Void> update(@RequestBody TelefoneDTO objDto, @PathVariable String id) {
+		Telefone obj = service.fromDTO(objDto);
+		obj.setId(id);
+		obj = service.update(obj);
+		return ResponseEntity.noContent().build();
+	}
+	
+	@RequestMapping(value="/{id}/posts", method=RequestMethod.GET)
+ 	public ResponseEntity<List<Post>> findPosts(@PathVariable String id) {
+		Telefone obj = service.findById(id);
+		return ResponseEntity.ok().body(obj.getPosts());
 	}
 
 }

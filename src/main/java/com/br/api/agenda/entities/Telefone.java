@@ -1,9 +1,14 @@
 package com.br.api.agenda.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.br.api.agenda.domain.Post;
 
 @Document(collection="telefone")
 public class Telefone implements Serializable {
@@ -18,6 +23,9 @@ public class Telefone implements Serializable {
     private String numero;
     private Tipo tipoTelefone;
     private String ramal;
+    
+    @DBRef(lazy = true)
+	private List<Post> posts = new ArrayList<>();
     
     public Telefone() {
     	
@@ -57,24 +65,56 @@ public class Telefone implements Serializable {
 		return id;
 	}
 
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	public int getDdd() {
 		return ddd;
+	}
+
+	public void setDdd(int ddd) {
+		this.ddd = ddd;
 	}
 
 	public int getDdi() {
 		return ddi;
 	}
 
+	public void setDdi(int ddi) {
+		this.ddi = ddi;
+	}
+
 	public String getNumero() {
 		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
 	}
 
 	public Tipo getTipoTelefone() {
 		return tipoTelefone;
 	}
 
+	public void setTipoTelefone(Tipo tipoTelefone) {
+		this.tipoTelefone = tipoTelefone;
+	}
+
 	public String getRamal() {
 		return ramal;
+	}
+
+	public void setRamal(String ramal) {
+		this.ramal = ramal;
+	}
+	
+	public List<Post> getPosts() {
+		return posts;
+	}
+
+	public void setPosts(List<Post> posts) {
+		this.posts = posts;
 	}
 
 	@Override

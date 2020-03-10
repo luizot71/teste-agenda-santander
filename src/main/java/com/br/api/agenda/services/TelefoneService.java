@@ -35,6 +35,20 @@ public class TelefoneService {
 		tel.deleteById(id);
 	}
 	
+	public Telefone update(Telefone obj) {
+		Telefone newObj = findById(obj.getId());
+		updateData(newObj, obj);
+		return tel.save(newObj);
+	}
+
+	private void updateData(Telefone newObj, Telefone obj) {
+		newObj.setDdd(obj.getDdd());
+		newObj.setDdi(obj.getDdi());
+		newObj.setNumero(obj.getNumero());
+		newObj.setTipoTelefone(obj.getTipoTelefone());
+		newObj.setRamal(obj.getRamal());
+	}
+	
 	public Telefone fromDTO(TelefoneDTO objDto) {
 		return new Telefone(objDto.getId(), objDto.getDdd(), objDto.getDdi(), objDto.getNumero(), objDto.getTipoTelefone(), objDto.getRamal());
 	}

@@ -35,6 +35,23 @@ public class EnderecoService {
 		end.deleteById(id);
 	}
 	
+	public Endereco update(Endereco obj) {
+		Endereco newObj = findById(obj.getId());
+		updateData(newObj, obj);
+		return end.save(newObj);
+	}
+
+	private void updateData(Endereco newObj, Endereco obj) {
+		newObj.setTipoEndereco(obj.getTipoEndereco());
+		newObj.setTipoLogradouro(obj.getTipoLogradouro());
+		newObj.setLogradouro(obj.getLogradouro());
+		newObj.setNumero(obj.getNumero());
+		newObj.setComplemento(obj.getComplemento());
+		newObj.setBairro(obj.getBairro());
+		newObj.setCidade(obj.getCidade());
+		newObj.setCep(obj.getCep());
+	}
+	
 	public Endereco fromDTO(EnderecoDTO objDto) {
 		return new Endereco(objDto.getId(), objDto.getTipoEndereco(), objDto.getTipoLogradouro(), objDto.getLogradouro(), objDto.getNumero(), objDto.getComplemento(), objDto.getBairro(), objDto.getCidade(), objDto.getCep());
 	}

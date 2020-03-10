@@ -59,11 +59,6 @@ public class Instantiation implements CommandLineRunner {
 		Telefone tel4 = new Telefone(null, 23, 000, "34873211", Telefone.Tipo.Trabalho, "301");
 		Telefone tel5 = new Telefone(null, 27, 000, "32338778", Telefone.Tipo.Residencial, "");
 		
-		userRepository.saveAll(Arrays.asList(user1, user2, user3, user4, user5));
-		agendaRepository.saveAll(Arrays.asList(ag1, ag2, ag3, ag4, ag5));
-		enderecoRepository.saveAll(Arrays.asList(end1, end2, end3, end4, end5));
-		telefoneRepository.saveAll(Arrays.asList(tel1, tel2, tel3, tel4, tel5));
-		
 		user1.getDados_agenda().add(ag1);
 		user2.getDados_agenda().add(ag2);
 		user3.getDados_agenda().add(ag3);
@@ -81,6 +76,11 @@ public class Instantiation implements CommandLineRunner {
 		user3.getTelefones().add(tel3);
 		user4.getTelefones().add(tel4);
 		user5.getTelefones().add(tel5);
+		
+		userRepository.saveAll(Arrays.asList(user1, user2, user3, user4, user5));
+		agendaRepository.saveAll(Arrays.asList(ag1, ag2, ag3, ag4, ag5));
+		enderecoRepository.saveAll(Arrays.asList(end1, end2, end3, end4, end5));
+		telefoneRepository.saveAll(Arrays.asList(tel1, tel2, tel3, tel4, tel5));
 		
 	}
 }

@@ -35,6 +35,18 @@ public class AgendaService {
 		agenda.deleteById(id);
 	}
 	
+	public Agenda update(Agenda obj) {
+		Agenda newObj = findById(obj.getId());
+		updateData(newObj, obj);
+		return agenda.save(newObj);
+	}
+
+	private void updateData(Agenda newObj, Agenda obj) {
+		newObj.setName(obj.getName());
+		newObj.setDateOfBirth(obj.getDateOfBirth());
+		newObj.setCpf(obj.getCpf());
+	}
+	
 	public Agenda fromDTO(AgendaDTO objDto) {
 		return new Agenda(objDto.getId(), objDto.getName(), objDto.getDateOfBirth(), objDto.getCpf());
 	}

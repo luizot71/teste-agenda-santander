@@ -1,9 +1,14 @@
 package com.br.api.agenda.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.br.api.agenda.domain.Post;
 
 @Document(collection="agenda")
 public class Agenda implements Serializable {
@@ -15,6 +20,9 @@ public class Agenda implements Serializable {
 	private String name;
 	private String dateOfBirth;
 	private String cpf;
+	
+	@DBRef(lazy = true)
+	private List<Post> posts = new ArrayList<>();
 	
 	public Agenda(String id, String name, String dateOfBirth, String cpf) {
 		super();
@@ -58,16 +66,40 @@ public class Agenda implements Serializable {
 		return id;
 	}
 
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	public String getName() {
 		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getDateOfBirth() {
 		return dateOfBirth;
 	}
 
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
 	public String getCpf() {
 		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	
+	public List<Post> getPosts() {
+		return posts;
+	}
+
+	public void setPosts(List<Post> posts) {
+		this.posts = posts;
 	}
 
 }

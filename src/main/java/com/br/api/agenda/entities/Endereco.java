@@ -1,9 +1,14 @@
 package com.br.api.agenda.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.br.api.agenda.domain.Post;
 
 @Document(collection="endereco")
 public class Endereco implements Serializable {
@@ -20,6 +25,10 @@ public class Endereco implements Serializable {
     private String bairro;
     private String cidade;
     private String cep;
+    
+    @DBRef(lazy = true)
+	private List<Post> posts = new ArrayList<>();
+    
 	public Endereco(String id, String tipoEndereco, String tipoLogradouro, String logradouro, String numero,
 			String complemento, String bairro, String cidade, String cep) {
 		super();
@@ -115,5 +124,12 @@ public class Endereco implements Serializable {
 	}
 	public void setCep(String cep) {
 		this.cep = cep;
+	}
+	public List<Post> getPosts() {
+		return posts;
+	}
+
+	public void setPosts(List<Post> posts) {
+		this.posts = posts;
 	}
 }
