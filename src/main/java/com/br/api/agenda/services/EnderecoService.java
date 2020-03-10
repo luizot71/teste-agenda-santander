@@ -30,6 +30,11 @@ public class EnderecoService {
 		return end.insert(obj);
 	}
 	
+	public void delete(String id) {
+		findById(id);
+		end.deleteById(id);
+	}
+	
 	public Endereco fromDTO(EnderecoDTO objDto) {
 		return new Endereco(objDto.getId(), objDto.getTipoEndereco(), objDto.getTipoLogradouro(), objDto.getLogradouro(), objDto.getNumero(), objDto.getComplemento(), objDto.getBairro(), objDto.getCidade(), objDto.getCep());
 	}

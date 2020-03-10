@@ -30,6 +30,11 @@ public class TelefoneService {
 		return tel.insert(obj);
 	}
 	
+	public void delete(String id) {
+		findById(id);
+		tel.deleteById(id);
+	}
+	
 	public Telefone fromDTO(TelefoneDTO objDto) {
 		return new Telefone(objDto.getId(), objDto.getDdd(), objDto.getDdi(), objDto.getNumero(), objDto.getTipoTelefone(), objDto.getRamal());
 	}

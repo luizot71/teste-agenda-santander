@@ -6,6 +6,83 @@
 	},
 	"item": [
 		{
+			"name": "http://localhost:8080/enderecos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"tipoEndereco\": \"Avenida\",\r\n        \"tipoLogradouro\": \"Av.\",\r\n        \"logradouro\": \"Rio Branco\",\r\n        \"numero\": \"190\",\r\n        \"complemento\": \"Sala 903\",\r\n        \"bairro\": \"Centro\",\r\n        \"cidade\": \"Rio de Janeiro\",\r\n        \"cep\": \"22900-031\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/enderecos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enderecos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/telefones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/telefones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"telefones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/dados_agenda",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dados_agenda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dados_agenda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "http://localhost:8080/users",
 			"request": {
 				"method": "GET",
@@ -20,8 +97,380 @@
 					"path": [
 						"users"
 					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/5h66cb2e99439e3a37223759fhfhfhfh43434322333232",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/5h66cb2e99439e3a37223759fhfhfhfh43434322333232",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"5h66cb2e99439e3a37223759fhfhfhfh43434322333232"
+					]
 				},
-				"description": "Requisição para obter os dados dos usuarios da Agenda"
+				"description": "Objecto não encontrado"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/5e66cd7fb1caf87a54dea849",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/5e66cd7fb1caf87a54dea849",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"5e66cd7fb1caf87a54dea849"
+					]
+				},
+				"description": "Busca por Id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/5h66cb2e99439e3a37223759fhfhfhfh43434322333232",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/5h66cb2e99439e3a37223759fhfhfhfh43434322333232",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"5h66cb2e99439e3a37223759fhfhfhfh43434322333232"
+					]
+				},
+				"description": "Erro 500 para Objecto Não Encontrado (sem tratamento de exception para que retorne o Erro 404)"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/5e66d12b8019774ad6f1a2dcooo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/5e66d12b8019774ad6f1a2dcooo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"5e66d12b8019774ad6f1a2dcooo"
+					]
+				},
+				"description": "Tratamento de erro para Objecto Não Encontrado (Erro 404 tratado)"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				},
+				"description": "Inserir usuários (Metodo POST)"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/5e66e0446957f56d72067e32",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\" : \"José Afonso\",\n\t\"email\" : \"joseafonso@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/5e66e0446957f56d72067e32",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"5e66e0446957f56d72067e32"
+					]
+				},
+				"description": "Usuário novo José Afonso inserido"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/enderecos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\r\n        \"tipoEndereco\": \"Avenida\",\r\n        \"tipoLogradouro\": \"Av.\",\r\n        \"logradouro\": \"Belem do Pará\",\r\n        \"numero\": \"345\",\r\n        \"complemento\": \"Sala 709\",\r\n        \"bairro\": \"Centro\",\r\n        \"cidade\": \"Belem do Pará\",\r\n        \"cep\": \"45566-345\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/enderecos/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enderecos",
+						""
+					]
+				},
+				"description": "Criar novo Endereço"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/enderecos/5e66e8c6003a066a09b562ef",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\r\n        \"tipoEndereco\": \"Avenida\",\r\n        \"tipoLogradouro\": \"Av.\",\r\n        \"logradouro\": \"Belem do Pará\",\r\n        \"numero\": \"345\",\r\n        \"complemento\": \"Sala 709\",\r\n        \"bairro\": \"Centro\",\r\n        \"cidade\": \"Belem do Pará\",\r\n        \"cep\": \"45566-345\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/enderecos/5e66e8c6003a066a09b562ef",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enderecos",
+						"5e66e8c6003a066a09b562ef"
+					]
+				},
+				"description": "Metodo GET para Obter novo Endereco inserido"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/telefones",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\r\n        \"ddd\": 24,\r\n        \"ddi\": 0,\r\n        \"numero\": \"34354487\",\r\n        \"tipoTelefone\": \"Residencial\",\r\n        \"ramal\": \"\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/telefones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"telefones"
+					]
+				},
+				"description": "Metodo POST para inserir no Telefone"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/telefones//5e66ee97243c9b68325e4749",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\r\n        \"ddd\": 24,\r\n        \"ddi\": 0,\r\n        \"numero\": \"34354487\",\r\n        \"tipoTelefone\": \"Residencial\",\r\n        \"ramal\": \"\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/telefones/5e66ee97243c9b68325e4749",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"telefones",
+						"5e66ee97243c9b68325e4749"
+					]
+				},
+				"description": "Metodo GET para obter novo Telefone inserido"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/dados_agenda",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\r\n        \"name\": \"Maria de Fátima\",\r\n        \"dateOfBirth\": \"23/01/1979\",\r\n        \"cpf\": \"01076598700\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dados_agenda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dados_agenda"
+					]
+				},
+				"description": "Metodo POST para inserir novo Dado na Agenda"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/dados_agenda",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\r\n        \"name\": \"Maria de Fátima\",\r\n        \"dateOfBirth\": \"23/01/1979\",\r\n        \"cpf\": \"01076598700\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dados_agenda/5e66f022243c9b68325e474a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dados_agenda",
+						"5e66f022243c9b68325e474a"
+					]
+				},
+				"description": "Metodo GET para buscar novo Dado da Agenda inserido"
 			},
 			"response": []
 		}

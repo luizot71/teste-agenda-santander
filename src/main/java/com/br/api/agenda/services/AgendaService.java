@@ -30,6 +30,11 @@ public class AgendaService {
 		return agenda.insert(obj);
 	}
 	
+	public void delete(String id) {
+		findById(id);
+		agenda.deleteById(id);
+	}
+	
 	public Agenda fromDTO(AgendaDTO objDto) {
 		return new Agenda(objDto.getId(), objDto.getName(), objDto.getDateOfBirth(), objDto.getCpf());
 	}
