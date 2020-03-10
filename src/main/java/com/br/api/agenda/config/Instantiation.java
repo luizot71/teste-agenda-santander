@@ -1,17 +1,23 @@
 package com.br.api.agenda.config;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
+import com.br.api.agenda.domain.Post;
 import com.br.api.agenda.domain.User;
+import com.br.api.agenda.dto.AuthorDTO;
+import com.br.api.agenda.dto.CommentDTO;
 import com.br.api.agenda.entities.Agenda;
 import com.br.api.agenda.entities.Endereco;
 import com.br.api.agenda.entities.Telefone;
 import com.br.api.agenda.repository.AgendaRepository;
 import com.br.api.agenda.repository.EnderecoRepository;
+import com.br.api.agenda.repository.PostRepository;
 import com.br.api.agenda.repository.TelefoneRepository;
 import com.br.api.agenda.repository.UserRepository;
 
@@ -29,17 +35,44 @@ public class Instantiation implements CommandLineRunner {
 	
 	@Autowired
 	private TelefoneRepository telefoneRepository;
+	
+	@Autowired
+	private PostRepository postRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
 		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
+		
 		userRepository.deleteAll();
+		postRepository.deleteAll();
+		enderecoRepository.deleteAll();
+		telefoneRepository.deleteAll();
+		agendaRepository.deleteAll();
 
 		User user1 = new User(null, "Luiz Otávio", "luizotaviomartinsf@gmail.com");
 		User user2 = new User(null, "André Luiz", "andreluiz@gmail.com");
 		User user3 = new User(null, "Henrique Andrade", "henrique@gmail.com");
 		User user4 = new User(null, "João Felipe", "joaofelipe@gmail.com");
 		User user5 = new User(null, "Ingrid Martins", "ingridmartins@gmail.com");
+		
+		userRepository.saveAll(Arrays.asList(user1, user2, user3, user4, user5));
+		
+		Post post1 = new Post(null, sdf.parse("21/03/2018"), "Partiu viagem", "Vou viajar para São Paulo. Abraços!", new AuthorDTO(user1));
+		Post post2 = new Post(null, sdf.parse("23/03/2018"), "Bom dia", "Acordei feliz hoje!", new AuthorDTO(user2));
+
+		CommentDTO c1 = new CommentDTO("Boa viagem mano!", sdf.parse("21/03/2018"), new AuthorDTO(user3));
+		CommentDTO c2 = new CommentDTO("Aproveite", sdf.parse("22/03/2018"), new AuthorDTO(user4));
+		CommentDTO c3 = new CommentDTO("Tenha um ótimo dia!", sdf.parse("23/03/2018"), new AuthorDTO(user5));
+		
+		post1.getComments().addAll(Arrays.asList(c1, c2));
+		post2.getComments().addAll(Arrays.asList(c3));
+		
+		postRepository.saveAll(Arrays.asList(post1, post2));
+		
+		user1.getPosts().addAll(Arrays.asList(post1, post2));
+		userRepository.save(user1);
 		
 		Agenda ag1 = new Agenda(null, "Luiz Otávio", "23/01/1980", "01165793890");
 		Agenda ag2 = new Agenda(null, "André Luiz", "23/01/1980", "09245792310");

@@ -12,7 +12,7 @@ import com.br.api.agenda.dto.AuthorDTO;
 import com.br.api.agenda.dto.CommentDTO;
 
 
-@Document
+@Document(collection="post")
 public class Post implements Serializable {
 	private static final long serialVersionUID = 1L;
 
