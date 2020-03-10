@@ -8,6 +8,7 @@ public class AgendaDTO implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
+	private String id;
 	private String name;
 	private String dateOfBirth;
 	private String cpf;
@@ -17,9 +18,18 @@ public class AgendaDTO implements Serializable {
 	}
 	
 	public AgendaDTO(Agenda obj) {
+		id = obj.getId();
 		name = obj.getName();
 		dateOfBirth = obj.getDateOfBirth();
 		cpf = obj.getCpf();
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getName() {

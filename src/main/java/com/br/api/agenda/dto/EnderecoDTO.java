@@ -4,6 +4,7 @@ import com.br.api.agenda.entities.Endereco;
 
 public class EnderecoDTO {
 	
+	private String id;
 	private String tipoEndereco;
     private String tipoLogradouro;
     private String logradouro;
@@ -18,6 +19,7 @@ public class EnderecoDTO {
     }
     
     public EnderecoDTO(Endereco obj) {
+    	id = obj.getId();
     	tipoEndereco = obj.getTipoEndereco();
     	tipoLogradouro = obj.getTipoLogradouro();
     	logradouro = obj.getLogradouro();
@@ -26,6 +28,14 @@ public class EnderecoDTO {
     	bairro = obj.getBairro();
     	cidade = obj.getCidade();
     	cep = obj.getCep();
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getTipoEndereco() {
@@ -91,4 +101,6 @@ public class EnderecoDTO {
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
+
+	
 }

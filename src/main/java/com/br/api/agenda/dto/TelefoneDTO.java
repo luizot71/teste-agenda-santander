@@ -4,6 +4,7 @@ import com.br.api.agenda.entities.Telefone;
 
 public class TelefoneDTO {
 	
+	private String id;
 	public enum Tipo { Celular, Residencial, Trabalho }
     private int ddd;
     private int ddi;
@@ -16,11 +17,20 @@ public class TelefoneDTO {
     }
     
     public TelefoneDTO(Telefone obj) {
+    	id = obj.getId();
 		ddd = obj.getDdd();
 		ddi = obj.getDdi();
 		numero = obj.getNumero();
 		tipoTelefone = obj.getTipoTelefone();
 		ramal = obj.getRamal();
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public int getDdd() {
