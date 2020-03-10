@@ -1,0 +1,5 @@
+{"_id":{"$oid":"5e6719b0956eda107dd0a220"},"ddd":{"$numberInt":"21"},"ddi":{"$numberInt":"0"},"numero":"992762617","tipoTelefone":"Celular","ramal":"","posts":[],"_class":"com.br.api.agenda.entities.Telefone"}
+{"_id":{"$oid":"5e6719b0956eda107dd0a221"},"ddd":{"$numberInt":"11"},"ddi":{"$numberInt":"0"},"numero":"31387822","tipoTelefone":"Trabalho","ramal":"201","posts":[],"_class":"com.br.api.agenda.entities.Telefone"}
+{"_id":{"$oid":"5e6719b0956eda107dd0a222"},"ddd":{"$numberInt":"51"},"ddi":{"$numberInt":"0"},"numero":"997462387","tipoTelefone":"Celular","ramal":"","posts":[],"_class":"com.br.api.agenda.entities.Telefone"}
+{"_id":{"$oid":"5e6719b0956eda107dd0a223"},"ddd":{"$numberInt":"23"},"ddi":{"$numberInt":"0"},"numero":"34873211","tipoTelefone":"Trabalho","ramal":"301","posts":[],"_class":"com.br.api.agenda.entities.Telefone"}
+{"_id":{"$oid":"5e6719b0956eda107dd0a224"},"ddd":{"$numberInt":"27"},"ddi":{"$numberInt":"0"},"numero":"32338778","tipoTelefone":"Residencial","ramal":"","posts":[],"_class":"com.br.api.agenda.entities.Telefone"}
