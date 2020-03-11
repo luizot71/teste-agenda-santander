@@ -50,14 +50,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/telefones",
+					"raw": "http://localhost:8080/telefones/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"telefones"
+						"telefones",
+						""
 					]
 				}
 			},
@@ -471,6 +472,226 @@
 					]
 				},
 				"description": "Metodo GET para buscar novo Dado da Agenda inserido"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/5e66f8e9c21950229c5b007a",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users/5e66f8e9c21950229c5b007a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"5e66f8e9c21950229c5b007a"
+					]
+				},
+				"description": "Metodo DELETE para deletar um usuario"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/enderecos/5e66f6f6c21950229c5b0074",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"tipoEndereco\": \"Avenida\",\r\n        \"tipoLogradouro\": \"Av.\",\r\n        \"logradouro\": \"Rio Branco\",\r\n        \"numero\": \"190\",\r\n        \"complemento\": \"Sala 903\",\r\n        \"bairro\": \"Centro\",\r\n        \"cidade\": \"Rio de Janeiro\",\r\n        \"cep\": \"22900-031\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/enderecos/5e66f6f6c21950229c5b0074",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enderecos",
+						"5e66f6f6c21950229c5b0074"
+					]
+				},
+				"description": "Metodo DELETE para deletar um endereco"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/telefones",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/telefones/5e66f6f6c21950229c5b0079",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"telefones",
+						"5e66f6f6c21950229c5b0079"
+					]
+				},
+				"description": "Metodo DELETE para deletar um telefone"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/dados_agenda/5e66b59d14029e58c03a8b9f",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dados_agenda/5e66b59d14029e58c03a8b9f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dados_agenda",
+						"5e66b59d14029e58c03a8b9f"
+					]
+				},
+				"description": "Metodo DELETE para deletar um dado da agenda"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/enderecos/5e66b59e14029e58c03a8ba4",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipoEndereco\": \"Praça\",\r\n    \"tipoLogradouro\": \"Pc.\",\r\n    \"logradouro\": \"General Severiano\",\r\n    \"numero\": \"123\",\r\n    \"complemento\": \"Casa 12\",\r\n    \"bairro\": \"Botafogo\",\r\n    \"cidade\": \"Rio de Janeiro\",\r\n    \"cep\": \"22290-230\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/enderecos/5e66b59e14029e58c03a8ba4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"enderecos",
+						"5e66b59e14029e58c03a8ba4"
+					]
+				},
+				"description": "Metodo PUT para alterar um Endereco"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/telefones/5e66b59e14029e58c03a8ba9",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"ddd\": 29,\r\n        \"ddi\": 0,\r\n        \"numero\": \"34332311\",\r\n        \"tipoTelefone\": \"Trabalho\",\r\n        \"ramal\": \"\"\r\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/telefones/5e66b59e14029e58c03a8ba9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"telefones",
+						"5e66b59e14029e58c03a8ba9"
+					]
+				},
+				"description": "Metodo PUT para alterar um telefone"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/dados_agenda/5e66c083f4c0cf44fe1809bf",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dados_agenda/5e66c083f4c0cf44fe1809bf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dados_agenda",
+						"5e66c083f4c0cf44fe1809bf"
+					]
+				},
+				"description": "Metodo PUT para alterar um dado da agenda"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/users/5e6708b2156fdc26c40f897d",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\t{\r\n        \"name\": \"Jose Antonio\",\r\n        \"email\": \"joseantonio@gmail.com\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/5e6708b2156fdc26c40f897d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"5e6708b2156fdc26c40f897d"
+					]
+				},
+				"description": "Metodo PUT para alterar um usuario"
 			},
 			"response": []
 		}
