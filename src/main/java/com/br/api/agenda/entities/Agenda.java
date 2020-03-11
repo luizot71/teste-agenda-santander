@@ -2,6 +2,7 @@ package com.br.api.agenda.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -10,27 +11,43 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.br.api.agenda.domain.Post;
 
-@Document(collection="agenda")
+@Document(collection = "agenda")
 public class Agenda implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	private String id;
 	private String name;
-	private String dateOfBirth;
-	private String cpf;
+	private Date dateOfBirth;
 	
+	private String cpf;
+
 	@DBRef(lazy = true)
 	private List<Post> posts = new ArrayList<>();
-	
-	public Agenda(String id, String name, String dateOfBirth, String cpf) {
+
+	public Agenda(String id, String name, Date dateOfBirth, String cpf) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.dateOfBirth = dateOfBirth;
 		this.cpf = cpf;
 	}
+
+	public boolean valida(Agenda ag) {
+
+		String nome = ag.getName();
+		return nome.matches("/[A-Z][a-z]* [A-Z][a-z]*/");
+	}
+	
+	public boolean validaCpf(Agenda cd) {
+		
+		String c = cd.getCpf();
+		
+		return c.matches("[0-9]{3}\\.?[0-9]{3}\\.?[0-9]{3}\\-?[0-9]{2}");
+		
+	}
+	
 
 	@Override
 	public int hashCode() {
@@ -78,11 +95,11 @@ public class Agenda implements Serializable {
 		this.name = name;
 	}
 
-	public String getDateOfBirth() {
+	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(String dateOfBirth) {
+	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 
@@ -93,7 +110,7 @@ public class Agenda implements Serializable {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	
+
 	public List<Post> getPosts() {
 		return posts;
 	}

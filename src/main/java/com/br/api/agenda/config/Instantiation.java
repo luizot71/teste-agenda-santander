@@ -74,11 +74,11 @@ public class Instantiation implements CommandLineRunner {
 		user1.getPosts().addAll(Arrays.asList(post1, post2));
 		userRepository.save(user1);
 		
-		Agenda ag1 = new Agenda(null, "Luiz Otávio", "23/01/1980", "01165793890");
-		Agenda ag2 = new Agenda(null, "André Luiz", "23/01/1980", "09245792310");
-		Agenda ag3 = new Agenda(null, "Henrique Andrade", "23/01/1980", "08321784398");
-		Agenda ag4 = new Agenda(null, "João Felipe", "23/01/1980", "01187634567");
-		Agenda ag5 = new Agenda(null, "Ingrid Martins", "23/01/1980", "09923476587");
+		Agenda ag1 = new Agenda(null, "Luiz Otávio", sdf.parse("21/03/2018"), "01165793890");
+		Agenda ag2 = new Agenda(null, "André Luiz", sdf.parse("21/03/2020"), "09245792310");
+		Agenda ag3 = new Agenda(null, "Henrique Andrade", sdf.parse("21/03/1992"), "08321784398");
+		Agenda ag4 = new Agenda(null, "João Felipe", sdf.parse("21/03/1987"), "01187634567");
+		Agenda ag5 = new Agenda(null, "Ingrid Martins", sdf.parse("21/03/1996"), "09923476587");
 		
 		Endereco end1 = new Endereco(null, "Avenida", "Av.", "Paulista", "1401", "Sala 1409", "Centro", "São Paulo", "01311-000");
 		Endereco end2 = new Endereco(null, "Rua", "R.", "Paulista", "145", "Casa 23", "Butantã", "São Paulo", "37823-789");

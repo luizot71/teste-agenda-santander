@@ -1,6 +1,7 @@
 package com.br.api.agenda.dto;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import com.br.api.agenda.entities.Agenda;
 
@@ -10,7 +11,7 @@ public class AgendaDTO implements Serializable {
 	
 	private String id;
 	private String name;
-	private String dateOfBirth;
+	private Date dateOfBirth;
 	private String cpf;
 	
 	public AgendaDTO() {
@@ -40,11 +41,11 @@ public class AgendaDTO implements Serializable {
 		this.name = name;
 	}
 
-	public String getDateOfBirth() {
+	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(String dateOfBirth) {
+	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 
